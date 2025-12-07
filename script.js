@@ -30,6 +30,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Scroll Progress Indicator
+const scrollProgress = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.transform = `scaleX(${scrolled / 100})`;
+});
+
 // Navbar Scroll Effect
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
@@ -39,8 +48,10 @@ window.addEventListener('scroll', () => {
     
     if (currentScroll > 100) {
         navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
     } else {
         navbar.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.85)';
     }
     
     lastScroll = currentScroll;
@@ -66,6 +77,60 @@ window.addEventListener('scroll', () => {
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
+    });
+});
+
+// Back to Top Button
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Scroll Indicator Click Handler
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            const offsetTop = aboutSection.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+}
+
+// Fade-in Animation Observer
+const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeInObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe fade-in sections
+document.addEventListener('DOMContentLoaded', () => {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    fadeInElements.forEach(el => {
+        fadeInObserver.observe(el);
     });
 });
 

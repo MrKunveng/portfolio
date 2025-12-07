@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lukman's Professional Portfolio">
-    <title>Lukman - Portfolio</title>
+    <meta name="description" content="Lukman Kunveng - Data Scientist & AI/ML Enthusiast. Specializing in machine learning, data-driven solutions, and innovative AI applications.">
+    <meta name="keywords" content="Lukman Kunveng, Data Scientist, AI, Machine Learning, Deep Learning, Portfolio">
+    <meta name="author" content="Lukman Kunveng">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lukman Kunveng - Data Scientist & AI/ML Enthusiast">
+    <meta property="og:description" content="Data scientist with a robust background in mathematics and artificial intelligence, specialising in machine learning and data-driven solutions.">
+    <meta property="og:url" content="https://mrkunveng.github.io/portfolio/">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lukman Kunveng - Data Scientist & AI/ML Enthusiast">
+    <meta name="twitter:description" content="Data scientist with a robust background in mathematics and artificial intelligence, specialising in machine learning and data-driven solutions.">
+    
+    <title>Lukman Kunveng - Data Scientist & AI/ML Enthusiast | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <a href="#home"></a>
+                <a href="#home">LK</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -55,6 +72,7 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="Lukman_s_Res.pdf" class="btn btn-outline" download id="cv-download-link">Download CV</a>
                     </div>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/lukman-kunveng-4577b7106" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
@@ -78,23 +96,32 @@
                     <img src="https://drive.google.com/thumbnail?id=1k5rQyaqPIeIGjIwxkak2GJ6NnCA93NzP&sz=w1000" alt="Lukman Kunveng" class="hero-photo">
                 </div>
             </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Data scientist with a robust background in mathematics and artificial intelligence, 
-                        specialising in machine learning and data-driven solutions. Proven ability to develop 
-                        innovative applications that enhance user experience and improve operational efficiency.
+                        As a data-driven sales professional, I have a strong foundation in mathematics and artificial intelligence, 
+                        with a particular focus on machine-learning-powered revenue optimisation. Proven ability to convert complex 
+                        data into useful insights that reduce sales cycles, increase conversion rates, and preserve margins.
                     </p>
                     <p>
-                        Eager to leverage expertise in AI technologies to drive impactful projects and 
-                        contribute to organisational success.
+                        At EPIC TRAVEL, I built and maintained a full-stack analytics ecosystem, including Power BI dashboards that 
+                        track leads, conversions, revenue, and refunds in real time; content-based recommendation engines that 
+                        increase flight, hotel, and add-on attach rates; and predictive pricing models that adjust offers to 
+                        micro-market demand. These tools have significantly boosted win rates and bottom-line performance, while 
+                        maintaining 5-star customer happiness through AI-assisted issue resolution and proactive after-sales support.
                     </p>
                     <div class="about-stats">
                         <div class="stat-item">
@@ -116,7 +143,7 @@
     </section>
 
     <!-- Research Interests Section -->
-    <section id="research" class="research">
+    <section id="research" class="research fade-in">
         <div class="container">
             <h2 class="section-title">Research Interests</h2>
             <p class="research-intro">
@@ -180,10 +207,26 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <section id="experience" class="experience fade-in">
         <div class="container">
             <h2 class="section-title">Experience</h2>
             <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2025 – Present</span>
+                        <h3 class="timeline-title">Sales Officer</h3>
+                        <h4 class="timeline-company">EPIC TRAVEL FZ.LLC</h4>
+                        <p class="timeline-location">B03-322, Business Center 02, RAKEZ Business Zone-FZ, RAK, United Arab Emirates</p>
+                        <ul class="timeline-description">
+                            <li>Built and maintain simple dashboards and reports in Power BI to track leads, conversion, revenue, and refunds.</li>
+                            <li>Used data trends to adjust offers (routes, timing, pricing bands), improving win rates and margins.</li>
+                            <li>Resolves booking issues by coordinating with partners; maintained high customer satisfaction.</li>
+                            <li>Drives end-to-end sales cycle: prospecting, needs discovery, quoting, closing, and after-sales support.</li>
+                            <li>Built and maintain recommendation systems for flights/hotels/add-ons using content-based filtering to raise attach rate.</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -192,8 +235,8 @@
                         <h4 class="timeline-company"><a href="https://ayzeetechnology.com/" target="_blank" rel="noopener noreferrer">Ayzee A.I & Technology</a> | Remote</h4>
                         <p class="timeline-location">J120, Rhode St. AOB District, Ghana</p>
                         <ul class="timeline-description">
-                            <li>Identified, developed, and implemented AI-based solutions to address diverse digital challenges across multiple projects</li>
-                            <li>Provided expert programming and software development consultations including programming, debugging and optimizing codes</li>
+                            <li>Identified, developed, and implemented AI-based solutions to address diverse digital challenges across multiple projects.</li>
+                            <li>Provided expert programming and software development consultations including programming, debugging and optimizing codes.</li>
                         </ul>
                     </div>
                 </div>
@@ -205,11 +248,11 @@
                         <h4 class="timeline-company"><a href="https://ai4sense.com" target="_blank" rel="noopener noreferrer">Sensor6ty/ai4Sense</a> | Remote</h4>
                         <p class="timeline-location">Saint-Quentin, France</p>
                         <ul class="timeline-description">
-                            <li>Engineered an advanced speech-to-text system that improved transcription accuracy</li>
-                            <li>Developed Voice Assistant chat-bot for interacting with media players using Rasa and GPT3</li>
-                            <li>Evaluated speaker diarization techniques for identifying and transcribing multiple speakers in complex audio files</li>
-                            <li>Employed machine learning techniques in Python and R for advanced data analysis and visualization</li>
-                            <li>Worked with cloud-based and open-source tools like Microsoft Azure and Hugging Face to improve speech recognition systems</li>
+                            <li>Engineered an advanced speech-to-text system that improved transcription accuracy.</li>
+                            <li>Developed Voice Assistant chat-bot for interacting with media players using Rasa and GPT3.</li>
+                            <li>Evaluated speaker diarization techniques for identifying and transcribing multiple speakers in complex audio files.</li>
+                            <li>Employed machine learning techniques in Python and R for advanced data analysis and visualization.</li>
+                            <li>Worked with cloud-based and open-source tools like Microsoft Azure and Hugging Face to improve speech recognition systems.</li>
                         </ul>
                     </div>
                 </div>
@@ -221,8 +264,8 @@
                         <h4 class="timeline-company"><a href="https://firstatlanticbank.com.gh" target="_blank" rel="noopener noreferrer">First Atlantic Bank Ltd</a></h4>
                         <p class="timeline-location">Accra, Ghana</p>
                         <ul class="timeline-description">
-                            <li>Managed client relationships and new business development</li>
-                            <li>Assessed the creditworthiness of applicants and recommended approval or decline of loan requests</li>
+                            <li>Managed client relationships and new business development.</li>
+                            <li>Assessed the creditworthiness of applicants and recommended approval or decline of loan requests.</li>
                         </ul>
                     </div>
                 </div>
@@ -234,8 +277,8 @@
                         <h4 class="timeline-company"><a href="https://firstatlanticbank.com.gh" target="_blank" rel="noopener noreferrer">Energy Commercial Bank Ltd</a></h4>
                         <p class="timeline-location">Accra, Ghana</p>
                         <ul class="timeline-description">
-                            <li>Actively participated in trading activities within the Money Market, contributing to strategic financial decisions</li>
-                            <li>Managed and monitored the bank's interest rate positions and Net Open Position, ensuring optimal financial stability</li>
+                            <li>Actively participated in trading activities within the Money Market, contributing to strategic financial decisions.</li>
+                            <li>Managed and monitored the bank's interest rate positions and Net Open Position, ensuring optimal financial stability.</li>
                         </ul>
                     </div>
                 </div>
@@ -247,8 +290,8 @@
                         <h4 class="timeline-company"><a href="https://mysiclife.com/" target="_blank" rel="noopener noreferrer">SIC Life Insurance Ltd</a></h4>
                         <p class="timeline-location">Techiman Branch, Bono East</p>
                         <ul class="timeline-description">
-                            <li>Performed time-series analysis of monthly claims by type to determine predominant claim patterns for decision-making</li>
-                            <li>Processed underwriting tasks and prepared/jacketed policy documents</li>
+                            <li>Performed time-series analysis of monthly claims by type to determine predominant claim patterns for decision-making.</li>
+                            <li>Processed underwriting tasks and prepared/jacketed policy documents.</li>
                         </ul>
                     </div>
                 </div>
@@ -257,7 +300,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills fade-in">
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
@@ -994,6 +1037,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"></path>
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
