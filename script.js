@@ -8,9 +8,9 @@
 // 4. Get your credentials from the EmailJS dashboard and update the values below:
 
 const EMAILJS_CONFIG = {
-    PUBLIC_KEY: 'YOUR_PUBLIC_KEY',      // From: Dashboard > Account > General > Public Key
-    SERVICE_ID: 'YOUR_SERVICE_ID',      // From: Dashboard > Email Services > Copy Service ID
-    TEMPLATE_ID: 'YOUR_TEMPLATE_ID'     // From: Dashboard > Email Templates > Copy Template ID
+    PUBLIC_KEY: 'D3IncRuni8U_wy4Tn',      // From: Dashboard > Account > General > Public Key
+    SERVICE_ID: 'service_i22ud1o',      // From: Dashboard > Email Services > Copy Service ID
+    TEMPLATE_ID: 'template_5qspqqo'     // From: Dashboard > Email Templates > Copy Template ID
 };
 
 // ============================================
