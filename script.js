@@ -1,4 +1,21 @@
+// ============================================
+// EmailJS Configuration
+// ============================================
+// To set up EmailJS:
+// 1. Sign up at https://www.emailjs.com/
+// 2. Add an Email Service (Gmail, Outlook, etc.)
+// 3. Create an Email Template with variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+// 4. Get your credentials from the EmailJS dashboard and update the values below:
+
+const EMAILJS_CONFIG = {
+    PUBLIC_KEY: 'YOUR_PUBLIC_KEY',      // From: Dashboard > Account > General > Public Key
+    SERVICE_ID: 'YOUR_SERVICE_ID',      // From: Dashboard > Email Services > Copy Service ID
+    TEMPLATE_ID: 'YOUR_TEMPLATE_ID'     // From: Dashboard > Email Templates > Copy Template ID
+};
+
+// ============================================
 // Navigation Toggle
+// ============================================
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -181,30 +198,72 @@ skillBars.forEach(bar => {
     skillObserver.observe(bar);
 });
 
-// Contact Form Handling
+// ============================================
+// Contact Form Handling with EmailJS
+// ============================================
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
-    
-    // Here you would typically send the data to a server
-    // For now, we'll just show an alert
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    
-    // Reset form
-    contactForm.reset();
+// Initialize EmailJS when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+    }
 });
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Validate EmailJS configuration
+        if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
+            EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
+            EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+            alert('EmailJS is not configured. Please update the EMAILJS_CONFIG in script.js with your credentials.');
+            return;
+        }
+        
+        // Get form values
+        const formData = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Get submit button to show loading state
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        // Send email using EmailJS
+        emailjs.send(
+            EMAILJS_CONFIG.SERVICE_ID,
+            EMAILJS_CONFIG.TEMPLATE_ID,
+            formData
+        )
+        .then(() => {
+            // Show success message
+            alert('Thank you for your message! I will get back to you soon.');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Reset button
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+        })
+        .catch((error) => {
+            // Show error message
+            alert('Sorry, there was an error sending your message. Please try again or contact me directly at lukmankunveng@gmail.com');
+            console.error('EmailJS Error:', error);
+            
+            // Reset button
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+        });
+    });
+}
 
 // Typing Effect for Hero Title (Optional Enhancement)
 const heroTitle = document.querySelector('.hero-title');
