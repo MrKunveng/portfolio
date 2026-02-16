@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lukmankunveng.netlify.app/sitemap.xml

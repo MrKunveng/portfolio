@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lukman Kunveng - Data Scientist & AI/ML Enthusiast. Specializing in machine learning, data-driven solutions, and innovative AI applications.">
-    <meta name="keywords" content="Lukman Kunveng, Data Scientist, AI, Machine Learning, Deep Learning, Portfolio">
+    <meta name="description" content="Lukman Kunveng - Data Scientist & AI/ML Enthusiast with 3+ years experience. Specializing in machine learning, NLP, computer vision, and data-driven solutions. Master's in Data Science from AIMS.">
+    <meta name="keywords" content="Lukman Kunveng, Data Scientist, AI, Machine Learning, Deep Learning, NLP, Computer Vision, Azure AI, Python, Portfolio, Healthcare AI, Speech Recognition">
     <meta name="author" content="Lukman Kunveng">
+    <link rel="canonical" href="https://lukmankunveng.netlify.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Lukman Kunveng - Data Scientist & AI/ML Enthusiast">
     <meta property="og:description" content="Data scientist with a robust background in mathematics and artificial intelligence, specialising in machine learning and data-driven solutions.">
-    <meta property="og:url" content="https://mrkunveng.github.io/portfolio/">
+    <meta property="og:url" content="https://lukmankunveng.netlify.app/">
+    <meta property="og:image" content="https://drive.google.com/thumbnail?id=1k5rQyaqPIeIGjIwxkak2GJ6NnCA93NzP&sz=w1000">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lukman Kunveng - Data Scientist & AI/ML Enthusiast">
     <meta name="twitter:description" content="Data scientist with a robust background in mathematics and artificial intelligence, specialising in machine learning and data-driven solutions.">
+    <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1k5rQyaqPIeIGjIwxkak2GJ6NnCA93NzP&sz=w1000">
     
     <title>Lukman Kunveng - Data Scientist & AI/ML Enthusiast | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://drive.google.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress" id="scrollProgress"></div>
     
@@ -58,6 +70,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <main id="main-content">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -93,7 +106,11 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://drive.google.com/thumbnail?id=1k5rQyaqPIeIGjIwxkak2GJ6NnCA93NzP&sz=w1000" alt="Lukman Kunveng" class="hero-photo">
+                    <img src="https://drive.google.com/thumbnail?id=1k5rQyaqPIeIGjIwxkak2GJ6NnCA93NzP&sz=w1000" 
+                         alt="Lukman Kunveng - Data Scientist" 
+                         class="hero-photo"
+                         loading="eager"
+                         decoding="async">
                 </div>
             </div>
             <div class="scroll-indicator">
@@ -210,7 +227,24 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">Oct 2025 – Present</span>
+                        <span class="timeline-date">Feb 2026 – Present</span>
+                        <h3 class="timeline-title">Sales Officer/Engineer</h3>
+                        <h4 class="timeline-company"><a href="#" target="_blank" rel="noopener noreferrer">Armishumair For Social Media Applications</a></h4>
+                        <p class="timeline-location">Dubai, United Arab Emirates</p>
+                        <ul class="timeline-description">
+                            <li>Drive technical sales and client acquisition for social media application solutions, identifying business opportunities and converting leads into long-term partnerships.</li>
+                            <li>Provide technical consultation and product demonstrations to clients, explaining complex social media platform features and integration capabilities.</li>
+                            <li>Develop and maintain client relationships through regular communication, needs assessment, and customized solution proposals.</li>
+                            <li>Collaborate with development and product teams to align client requirements with technical capabilities and ensure successful implementation.</li>
+                            <li>Analyze market trends and competitor offerings to position products effectively and identify new revenue streams.</li>
+                            <li>Prepare technical documentation, sales reports, and performance metrics to track progress and optimize sales strategies.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2025 – Feb 2026</span>
                         <h3 class="timeline-title">Sales Officer</h3>
                         <h4 class="timeline-company">EPIC TRAVEL FZ.LLC</h4>
                         <p class="timeline-location">B03-322, Business Center 02, RAKEZ Business Zone-FZ, RAK, United Arab Emirates</p>
@@ -1040,18 +1074,29 @@
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required minlength="2" maxlength="100">
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required minlength="3" maxlength="200">
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required minlength="10" maxlength="1000"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" opacity="0.25"/>
+                                <path d="M12 2a10 10 0 0 1 10 10" opacity="0.75">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                                </path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
                 </form>
             </div>
         </div>
@@ -1060,7 +1105,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Lukman. All rights reserved.</p>
+            <p>&copy; <span id="currentYear"></span> Lukman Kunveng. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -1079,6 +1124,46 @@
 
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lukman Kunveng",
+        "jobTitle": "Data Scientist & AI/ML Enthusiast",
+        "url": "https://lukmankunveng.netlify.app",
+        "sameAs": [
+            "https://www.linkedin.com/in/lukman-kunveng-4577b7106",
+            "https://github.com/MrKunveng"
+        ],
+        "email": "lukmankunveng@gmail.com",
+        "alumniOf": [
+            {
+                "@type": "EducationalOrganization",
+                "name": "African Institute for Mathematical Sciences",
+                "location": "Mbour-Thies, Senegal"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "University for Development Studies",
+                "location": "Tamale, Ghana"
+            }
+        ],
+        "knowsAbout": [
+            "Machine Learning",
+            "Deep Learning",
+            "Natural Language Processing",
+            "Computer Vision",
+            "Data Science",
+            "Artificial Intelligence",
+            "Python",
+            "Azure AI"
+        ],
+        "description": "Data scientist with a comprehensive background in mathematics, machine learning, and applied analytics. Specializing in AI solutions for healthcare and data-driven decision making."
+    }
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,20 @@
+/* Accessibility - Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -1773,6 +1790,19 @@ section::before {
 }
 
 /* Contact Section */
+.contact {
+    background: var(--bg-secondary);
+}
+
+.contact-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+}
+
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1860,6 +1890,32 @@ section::before {
     resize: vertical;
 }
 
+.form-message {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.btn-loader {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Footer */
 .footer {
     background: var(--bg-dark);
@@ -1893,6 +1949,19 @@ section::before {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        z-index: 1001;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 
     .nav-menu {
@@ -1905,6 +1974,8 @@ section::before {
         padding: 2rem;
         box-shadow: var(--shadow-lg);
         transition: var(--transition);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -2125,5 +2196,65 @@ section::before {
     .scroll-indicator {
         bottom: 1rem;
         font-size: 0.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .scroll-progress,
+    .hamburger,
+    .back-to-top,
+    .scroll-indicator,
+    .hero-buttons,
+    .social-links,
+    .contact-form,
+    .footer-links {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    .hero {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 20px 0;
+        min-height: auto;
+    }
+    
+    .hero-title,
+    .hero-subtitle,
+    .hero-description {
+        color: #000 !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        padding: 20px 0;
+    }
+    
+    .section-title {
+        color: #000;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .project-card,
+    .education-card,
+    .award-card,
+    .cert-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
     }
 }

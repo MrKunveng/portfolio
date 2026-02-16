@@ -1,16 +1,21 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built with HTML, CSS, and JavaScript.
+A modern, responsive portfolio website for Lukman Kunveng - Data Scientist & AI/ML Enthusiast.
+
+🌐 **Live Site**: [https://lukmankunveng.netlify.app](https://lukmankunveng.netlify.app)
 
 ## Features
 
-- ✨ Modern and professional design
+- ✨ Modern and professional design with glassmorphism effects
 - 📱 Fully responsive (mobile, tablet, desktop)
 - 🎨 Smooth animations and transitions
-- 🚀 Fast and lightweight
-- ♿ Accessible design
-- 📧 Contact form
-- 🎯 Easy to customize
+- 🚀 Fast and lightweight with optimized performance
+- ♿ Accessible design with ARIA labels and skip links
+- 📧 Working contact form with EmailJS integration
+- 🎯 SEO optimized with meta tags and structured data
+- 📊 Scroll progress indicator
+- 🔝 Back to top button
+- 🖨️ Print-friendly styles
 
 ## Sections
 
@@ -130,13 +135,26 @@ Replace the placeholder in the hero section with your actual photo:
 ## File Structure
 
 ```
-Portforlio/
-├── index.html      # Main HTML file
-├── styles.css      # CSS styles
-├── script.js       # JavaScript functionality
-├── README.md       # This file
-└── Lukman_s_Res.pdf # Your CV (reference)
+Portfolio/
+├── index.html           # Main HTML file
+├── styles.css           # CSS styles with animations
+├── script.js            # JavaScript functionality
+├── README.md            # Documentation
+├── Lukman_s_CV1.pdf    # CV/Resume
+├── robots.txt           # SEO - Search engine instructions
+├── sitemap.xml          # SEO - Site structure
+├── .gitignore           # Git ignore rules
+└── .gitattributes       # Git attributes
 ```
+
+## Performance Optimizations
+
+- Preconnect to external resources (fonts, CDNs)
+- Optimized images with lazy loading
+- Minified and efficient CSS/JS
+- Structured data for better SEO
+- Sitemap and robots.txt included
+- Print-friendly styles
 
 ## Browser Support
 
@@ -144,6 +162,7 @@ Portforlio/
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## Getting Started
 
@@ -154,12 +173,38 @@ Portforlio/
 
 ## Deployment
 
-You can deploy this portfolio to:
+### Netlify (Recommended - Current Deployment)
 
-- **GitHub Pages**: Free hosting for static sites
-- **Netlify**: Easy drag-and-drop deployment
-- **Vercel**: Fast deployment with Git integration
-- **Your own server**: Upload via FTP
+1. Push your code to GitHub
+2. Connect your repository to Netlify
+3. Deploy settings:
+   - Build command: (leave empty for static site)
+   - Publish directory: `/` (root)
+4. Your site will be live at `https://your-site-name.netlify.app`
+
+### GitHub Pages
+
+1. Go to repository Settings > Pages
+2. Select branch: `main`
+3. Select folder: `/ (root)`
+4. Save and wait for deployment
+5. Your site will be live at `https://yourusername.github.io/repository-name`
+
+### Vercel
+
+1. Import your GitHub repository
+2. Framework Preset: Other
+3. Build Command: (leave empty)
+4. Output Directory: `./`
+5. Deploy
+
+### Custom Domain
+
+To use a custom domain:
+1. Purchase a domain from a registrar
+2. In your hosting platform (Netlify/Vercel), add custom domain
+3. Update DNS records as instructed
+4. Update all URLs in the code to use your custom domain
 
 ## Tips
 

@@ -218,7 +218,7 @@ if (contactForm) {
         if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
             EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
             EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
-            alert('EmailJS is not configured. Please update the EMAILJS_CONFIG in script.js with your credentials.');
+            showFormMessage('EmailJS is not configured. Please update the EMAILJS_CONFIG in script.js with your credentials.', 'error');
             return;
         }
         
@@ -232,8 +232,11 @@ if (contactForm) {
         
         // Get submit button to show loading state
         const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
+        const btnText = submitButton.querySelector('.btn-text');
+        const btnLoader = submitButton.querySelector('.btn-loader');
+        
+        btnText.style.display = 'none';
+        btnLoader.style.display = 'inline-flex';
         submitButton.disabled = true;
         
         // Send email using EmailJS
@@ -244,25 +247,38 @@ if (contactForm) {
         )
         .then(() => {
             // Show success message
-            alert('Thank you for your message! I will get back to you soon.');
+            showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
             
             // Reset form
             contactForm.reset();
-            
-            // Reset button
-            submitButton.textContent = originalButtonText;
-            submitButton.disabled = false;
         })
         .catch((error) => {
             // Show error message
-            alert('Sorry, there was an error sending your message. Please try again or contact me directly at lukmankunveng@gmail.com');
+            showFormMessage('Sorry, there was an error sending your message. Please try again or contact me directly at lukmankunveng@gmail.com', 'error');
             console.error('EmailJS Error:', error);
-            
+        })
+        .finally(() => {
             // Reset button
-            submitButton.textContent = originalButtonText;
+            btnText.style.display = 'inline';
+            btnLoader.style.display = 'none';
             submitButton.disabled = false;
         });
     });
+}
+
+// Helper function to show form messages
+function showFormMessage(message, type) {
+    const formMessage = document.getElementById('formMessage');
+    if (formMessage) {
+        formMessage.textContent = message;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+        
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
+    }
 }
 
 // Typing Effect for Hero Title (Optional Enhancement)
@@ -351,4 +367,12 @@ document.addEventListener('scroll', () => {
             }
         }
     });
+});
+
+// Update footer year dynamically
+document.addEventListener('DOMContentLoaded', () => {
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });
