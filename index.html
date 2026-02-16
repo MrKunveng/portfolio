@@ -32,6 +32,17 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://drive.google.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics (Replace with your tracking ID) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
@@ -58,12 +69,31 @@
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#conferences" class="nav-link">Conferences</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                    <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -228,16 +258,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Feb 2026 – Present</span>
-                        <h3 class="timeline-title">Sales Officer/Engineer</h3>
+                        <h3 class="timeline-title">Sales Officer & Growth Engineer</h3>
                         <h4 class="timeline-company"><a href="#" target="_blank" rel="noopener noreferrer">Armishumair For Social Media Applications</a></h4>
                         <p class="timeline-location">Dubai, United Arab Emirates</p>
                         <ul class="timeline-description">
-                            <li>Drive technical sales and client acquisition for social media application solutions, identifying business opportunities and converting leads into long-term partnerships.</li>
-                            <li>Provide technical consultation and product demonstrations to clients, explaining complex social media platform features and integration capabilities.</li>
-                            <li>Develop and maintain client relationships through regular communication, needs assessment, and customized solution proposals.</li>
-                            <li>Collaborate with development and product teams to align client requirements with technical capabilities and ensure successful implementation.</li>
-                            <li>Analyze market trends and competitor offerings to position products effectively and identify new revenue streams.</li>
-                            <li>Prepare technical documentation, sales reports, and performance metrics to track progress and optimize sales strategies.</li>
+                            <li>Engineer and maintain dynamic performance dashboards using Power BI and advanced Excel to monitor full-funnel KPIs (lead → opportunity → closed-won), improving visibility across pipeline, conversion, and revenue performance.</li>
+                            <li>Spearhead pipeline generation by running targeted outbound campaigns, cultivating referral partnerships, and optimising inbound lead follow-up—consistently expanding reach and growing the qualified pipeline.</li>
+                            <li>Execute rigorous lead qualification using the BANT framework (Budget, Authority, Need, Timeline) to prioritise high-value enterprise opportunities and allocate time toward the highest-probability deals.</li>
+                            <li>Manage end-to-end CRM pipeline operations, producing accurate revenue forecasts, tracking deal stages, and delivering pipeline health analytics to align Sales and Operations on priorities and execution.</li>
+                            <li>Deliver customised product demos and technical presentations; translate complex software capabilities into clear business value for both C-suite stakeholders and technical engineering teams; and accelerate decision-making.</li>
                         </ul>
                     </div>
                 </div>
@@ -476,17 +505,17 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
+                <div class="project-card" role="article" aria-label="Artificial Intelligence for Secure Remote Healthcare Monitoring project">
+                    <div class="project-image" role="img" aria-label="GemmaCare Healthcare AI Project">
                         <div class="project-overlay">
-                            <a href="https://gemmacare.streamlit.app" class="project-link" aria-label="Live Demo" title="Live Demo" target="_blank" rel="noopener noreferrer">
+                            <a href="https://gemmacare.streamlit.app" class="project-link" aria-label="View live demo of GemmaCare Healthcare AI project" title="Live Demo" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                 </svg>
                             </a>
-                            <a href="https://github.com/MrKunveng/GemmaCare" class="project-link" aria-label="View Code" title="GitHub Repository" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/MrKunveng/GemmaCare" class="project-link" aria-label="View source code on GitHub for GemmaCare project" title="GitHub Repository" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                 </svg>
@@ -512,17 +541,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
+                <div class="project-card" role="article" aria-label="PDF Merger App project">
+                    <div class="project-image" role="img" aria-label="PDF Merger Application">
                         <div class="project-overlay">
-                            <a href="https://pdfmergerforfree.streamlit.app" class="project-link" aria-label="View Project" title="Deployed App" target="_blank" rel="noopener noreferrer">
+                            <a href="https://pdfmergerforfree.streamlit.app" class="project-link" aria-label="View live demo of PDF Merger app" title="Deployed App" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                 </svg>
                             </a>
-                            <a href="https://github.com/MrKunveng/PDF_merger" class="project-link" aria-label="View Code" title="GitHub Repository" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/MrKunveng/PDF_merger" class="project-link" aria-label="View source code on GitHub for PDF Merger project" title="GitHub Repository" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                 </svg>
@@ -546,17 +575,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
+                <div class="project-card" role="article" aria-label="Personal Portfolio Website project">
+                    <div class="project-image" role="img" aria-label="Portfolio Website">
                         <div class="project-overlay">
-                            <a href="https://lukmankunveng.netlify.app" class="project-link" aria-label="View Project" title="Live Portfolio" target="_blank" rel="noopener noreferrer">
+                            <a href="https://lukmankunveng.netlify.app" class="project-link" aria-label="View live portfolio website" title="Live Portfolio" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                 </svg>
                             </a>
-                            <a href="https://github.com/MrKunveng/portfolio" class="project-link" aria-label="View Code" title="GitHub Repository" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/MrKunveng/portfolio" class="project-link" aria-label="View source code on GitHub for portfolio website" title="GitHub Repository" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                 </svg>
@@ -933,6 +962,87 @@
                     <div class="publication-content">
                         <h3 class="publication-title">Improving Speech Recognition for Ghanaian Accents Using Transformer-Based Accent Classification</h3>
                         <p class="publication-status">Accepted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <p class="testimonials-intro">
+                What colleagues and collaborators say about working with me.
+            </p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Lukman is an exceptional data scientist with a deep understanding of machine learning and AI. His work on speech recognition systems demonstrates both technical expertise and practical problem-solving skills."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Colleague</h4>
+                            <p class="testimonial-role">AI/ML Team Member</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Working with Lukman has been a great experience. He combines strong technical skills with excellent communication and a collaborative approach to problem-solving."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Project Collaborator</h4>
+                            <p class="testimonial-role">Healthcare AI Project</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Lukman's expertise in data science and his ability to translate complex technical concepts into actionable insights makes him a valuable team member on any data-driven project."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Team Lead</h4>
+                            <p class="testimonial-role">Data Science Team</p>
+                        </div>
                     </div>
                 </div>
             </div>
