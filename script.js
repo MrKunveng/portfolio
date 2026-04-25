@@ -102,15 +102,16 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+    const isDark = body.classList.contains('dark-mode');
+
     if (currentScroll > 100) {
         navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.97)' : 'rgba(255, 255, 255, 0.97)';
     } else {
         navbar.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
-        navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+        navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.85)' : 'rgba(255, 255, 255, 0.85)';
     }
-    
+
     lastScroll = currentScroll;
 });
 
@@ -123,7 +124,6 @@ window.addEventListener('scroll', () => {
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (window.pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
@@ -381,13 +381,12 @@ document.querySelectorAll('.stat-item').forEach(item => {
     statObserver.observe(item);
 });
 
-// Parallax Effect for Hero Section (Optional)
+// Subtle parallax for hero background only
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - scrolled / 500;
+    if (hero && scrolled < window.innerHeight) {
+        hero.style.backgroundPositionY = `${scrolled * 0.3}px`;
     }
 });
 

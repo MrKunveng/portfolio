@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lukman Kunveng – CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           Base Reset & Page
+        ============================================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0f172a;
+            --blue: #1e3a8a;
+            --blue-mid: #1e40af;
+            --blue-light: #3b82f6;
+            --gray-dark: #334155;
+            --gray-mid: #64748b;
+            --gray-light: #94a3b8;
+            --border: #e2e8f0;
+            --bg: #ffffff;
+        }
+
+        html { font-size: 10pt; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.55;
+            color: var(--navy);
+            background: #f1f5f9;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================================
+           Screen Controls (hidden on print)
+        ============================================================ */
+        .controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--navy);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+
+        .controls-brand {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .controls-actions { display: flex; gap: 0.75rem; align-items: center; }
+
+        .btn-ctrl {
+            padding: 0.5rem 1.25rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-download {
+            background: var(--blue-light);
+            color: white;
+        }
+        .btn-download:hover { background: #2563eb; transform: translateY(-1px); }
+
+        .btn-close {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-close:hover { background: rgba(255,255,255,0.25); }
+
+        .controls-hint {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.75rem;
+        }
+
+        /* ============================================================
+           CV Paper
+        ============================================================ */
+        .cv-wrapper {
+            padding: 3.5rem 2rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cv-paper {
+            background: var(--bg);
+            width: 100%;
+            max-width: 780px;
+            padding: 2.5rem 2.75rem;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+        }
+
+        /* ============================================================
+           Header
+        ============================================================ */
+        .cv-header {
+            border-bottom: 3px solid var(--blue);
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cv-name {
+            font-size: 28pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .cv-title {
+            font-size: 12pt;
+            font-weight: 400;
+            color: var(--blue-mid);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.01em;
+        }
+
+        .cv-contact {
+            font-size: 8.5pt;
+            color: var(--gray-dark);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 1rem;
+        }
+
+        .cv-contact a { color: var(--blue-mid); text-decoration: none; }
+        .cv-contact a:hover { text-decoration: underline; }
+        .cv-contact span { display: flex; align-items: center; gap: 0.25rem; }
+
+        /* ============================================================
+           Sections
+        ============================================================ */
+        .cv-section { margin-bottom: 1.1rem; }
+
+        .cv-section-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--navy);
+            border-bottom: 1.5px solid var(--blue);
+            padding-bottom: 2px;
+            margin-bottom: 0.65rem;
+        }
+
+        /* ============================================================
+           Competencies
+        ============================================================ */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 2rem;
+        }
+
+        .comp-item {
+            display: flex;
+            gap: 0.4rem;
+            font-size: 9pt;
+        }
+
+        .comp-label {
+            font-weight: 600;
+            min-width: 110px;
+            color: var(--gray-dark);
+        }
+
+        /* ============================================================
+           Experience Entries
+        ============================================================ */
+        .exp-entry { margin-bottom: 0.95rem; }
+        .exp-entry:last-child { margin-bottom: 0; }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .exp-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .exp-meta {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .exp-date {
+            font-size: 8.5pt;
+            color: var(--gray-dark);
+            font-weight: 500;
+        }
+
+        .exp-location {
+            font-size: 8pt;
+            color: var(--gray-mid);
+        }
+
+        .exp-company {
+            font-size: 9pt;
+            color: var(--blue-mid);
+            font-style: italic;
+            font-weight: 500;
+            margin: 1px 0 4px;
+        }
+
+        .exp-bullets {
+            padding-left: 1rem;
+            margin-top: 3px;
+        }
+
+        .exp-bullets li {
+            font-size: 9pt;
+            color: var(--gray-dark);
+            margin-bottom: 2px;
+            line-height: 1.5;
+        }
+
+        /* ============================================================
+           Education
+        ============================================================ */
+        .edu-note {
+            font-size: 8.5pt;
+            color: var(--gray-mid);
+            margin-top: 2px;
+        }
+
+        /* ============================================================
+           Projects
+        ============================================================ */
+        .project-links {
+            display: inline-flex;
+            gap: 0.5rem;
+            font-size: 8pt;
+            font-style: normal;
+        }
+
+        .project-links a {
+            color: var(--blue-mid);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .project-links a:hover { text-decoration: underline; }
+
+        /* ============================================================
+           Certifications Table
+        ============================================================ */
+        .cert-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        .cert-table td {
+            padding: 2.5px 0;
+            color: var(--gray-dark);
+            vertical-align: top;
+        }
+
+        .cert-table td:last-child {
+            text-align: right;
+            color: var(--gray-mid);
+            white-space: nowrap;
+            padding-left: 1rem;
+        }
+
+        .cert-table a { color: var(--blue-mid); text-decoration: none; font-size: 8pt; }
+
+        /* ============================================================
+           Inline lists
+        ============================================================ */
+        .inline-list {
+            font-size: 9pt;
+            color: var(--gray-dark);
+        }
+
+        /* ============================================================
+           References
+        ============================================================ */
+        .refs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .ref-item { font-size: 8.5pt; color: var(--gray-dark); line-height: 1.6; }
+        .ref-name { font-weight: 700; color: var(--navy); }
+        .ref-item a { color: var(--blue-mid); text-decoration: none; }
+
+        /* ============================================================
+           Footer
+        ============================================================ */
+        .cv-footer {
+            margin-top: 1.5rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 7.5pt;
+            color: var(--gray-light);
+        }
+
+        /* ============================================================
+           PRINT
+        ============================================================ */
+        @media print {
+            html { font-size: 9.5pt; }
+
+            body { background: white; }
+
+            .controls { display: none !important; }
+
+            .cv-wrapper {
+                padding: 0;
+                background: white;
+            }
+
+            .cv-paper {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            @page {
+                size: A4;
+                margin: 1.5cm 2cm;
+            }
+
+            .cv-section { page-break-inside: avoid; }
+            .exp-entry { page-break-inside: avoid; }
+            a { color: var(--blue-mid) !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Screen Controls -->
+    <div class="controls">
+        <span class="controls-brand">Lukman Kunveng — CV</span>
+        <div class="controls-actions">
+            <span class="controls-hint">Tip: choose "Save as PDF" in the print dialog</span>
+            <button class="btn-ctrl btn-download" onclick="window.print()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download / Print
+            </button>
+            <button class="btn-ctrl btn-close" onclick="window.close()">✕ Close</button>
+        </div>
+    </div>
+
+    <div class="cv-wrapper">
+    <div class="cv-paper">
+
+        <!-- ========== HEADER ========== -->
+        <header class="cv-header">
+            <div class="cv-name">LUKMAN KUNVENG</div>
+            <div class="cv-title">Data Scientist &nbsp;|&nbsp; Analytics &amp; AI Solutions</div>
+            <div class="cv-contact">
+                <span>+233 248 653 219</span>
+                <span><a href="mailto:lukmankunveng@gmail.com">lukmankunveng@gmail.com</a></span>
+                <span>Dubai, UAE</span>
+                <span><a href="https://github.com/MrKunveng" target="_blank" rel="noopener">github.com/MrKunveng</a></span>
+                <span><a href="https://lukmankunveng.netlify.app" target="_blank" rel="noopener">lukmankunveng.netlify.app</a></span>
+                <span><a href="https://www.linkedin.com/in/lukman-kunveng-4577b7106" target="_blank" rel="noopener">LinkedIn</a></span>
+            </div>
+        </header>
+
+        <!-- ========== PROFESSIONAL SUMMARY ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Professional Summary</div>
+            <p style="font-size:9.5pt; color:#334155; line-height:1.6;">
+                Data Scientist with 3+ years of experience building AI and machine learning solutions for business impact. Proven track record in predictive analytics, data-driven decision support, and deploying end-to-end ML systems. Achieved 95.2% accuracy in disease prediction using ensemble ML and LLMs, and delivered measurable revenue growth through recommendation engines. Former banking professional with hands-on experience in credit risk assessment, treasury operations, and financial analytics. Combines deep technical expertise with strong domain knowledge in financial services.
+            </p>
+        </section>
+
+        <!-- ========== CORE COMPETENCIES ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Core Competencies</div>
+            <div class="competencies-grid">
+                <div class="comp-item"><span class="comp-label">Programming:</span><span>Python, R, SQL</span></div>
+                <div class="comp-item"><span class="comp-label">Cloud &amp; Tools:</span><span>Microsoft Azure, Streamlit, Git</span></div>
+                <div class="comp-item"><span class="comp-label">Machine Learning:</span><span>Scikit-learn, TensorFlow, PyTorch</span></div>
+                <div class="comp-item"><span class="comp-label">Analytics:</span><span>Predictive Modelling, Statistical Analysis</span></div>
+                <div class="comp-item"><span class="comp-label">AI &amp; NLP:</span><span>LLMs, GPT, Rasa, Hugging Face, Whisper</span></div>
+                <div class="comp-item"><span class="comp-label">Financial:</span><span>Credit Risk, Treasury, Portfolio Analysis</span></div>
+                <div class="comp-item"><span class="comp-label">Visualisation:</span><span>Power BI, Matplotlib, Seaborn</span></div>
+                <div class="comp-item"><span class="comp-label">Office Suite:</span><span>Advanced Excel, Word, PowerPoint</span></div>
+            </div>
+        </section>
+
+        <!-- ========== PROFESSIONAL EXPERIENCE ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Professional Experience</div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Data Scientist (Hybrid)</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Oct 2025 – Present</div>
+                        <div class="exp-location">Dubai, UAE</div>
+                    </div>
+                </div>
+                <div class="exp-company">Armishumair for Social Media Applications</div>
+                <ul class="exp-bullets">
+                    <li>Designed and maintained dynamic performance dashboards using Power BI and advanced Excel to track KPIs across pipeline, conversion, and revenue metrics.</li>
+                    <li>Developed and deployed AI-powered recommendation systems and customer segmentation models, driving <strong>25% revenue growth</strong> during peak season.</li>
+                    <li>Built and optimised content-based recommendation engines for product upselling, increasing attach rates and average transaction value.</li>
+                    <li>Delivered data-driven reports and forecasts to senior leadership, translating complex analytical insights into actionable business strategy.</li>
+                    <li>Conducted end-to-end data pipeline management – from data collection and cleaning to model evaluation and deployment.</li>
+                </ul>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Azure Data Scientist</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Jun 2023 – Jul 2024</div>
+                        <div class="exp-location">Saint-Quentin, France (Remote)</div>
+                    </div>
+                </div>
+                <div class="exp-company">Sensor6ty / ai4Sense</div>
+                <ul class="exp-bullets">
+                    <li>Engineered a high-accuracy speech-to-text system, boosting transcription performance across diverse accents and noisy environments.</li>
+                    <li>Developed a Voice Assistant chatbot using Rasa and GPT-3 for media-player interaction, improving automation and accessibility.</li>
+                    <li>Evaluated and optimised speaker diarisation techniques for multi-speaker audio, enhancing conversation segmentation quality.</li>
+                    <li>Applied advanced ML techniques in Python and R for data analysis, visualisation, and production-grade research pipelines.</li>
+                    <li>Worked with Microsoft Azure Cognitive Services and Hugging Face to improve speech recognition systems.</li>
+                </ul>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Direct Sales Executive</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Jan 2019 – Dec 2020</div>
+                        <div class="exp-location">Accra, Ghana</div>
+                    </div>
+                </div>
+                <div class="exp-company">First Atlantic Bank Ltd</div>
+                <ul class="exp-bullets">
+                    <li>Expanded customer base through strategic prospecting and relationship management, contributing to deposit mobilisation and product uptake.</li>
+                    <li>Assessed creditworthiness of loan applicants and delivered risk-based recommendations, supporting high-quality credit decisions and portfolio growth.</li>
+                </ul>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Assistant Treasury Trainee</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Sep 2018 – Dec 2018</div>
+                        <div class="exp-location">Accra, Ghana</div>
+                    </div>
+                </div>
+                <div class="exp-company">Energy Commercial Bank Ltd</div>
+                <ul class="exp-bullets">
+                    <li>Participated in Money Market trading activities and contributed to strategic financial decision-making.</li>
+                    <li>Monitored the bank's interest rate positions and Net Open Position, ensuring optimal financial stability.</li>
+                </ul>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Intern – Data &amp; Underwriting</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Jun 2017 – Dec 2017</div>
+                        <div class="exp-location">Techiman, Bono East</div>
+                    </div>
+                </div>
+                <div class="exp-company">SIC Life Insurance Ltd</div>
+                <ul class="exp-bullets">
+                    <li>Performed time-series analysis of monthly claims data to identify predominant patterns for management decision-making.</li>
+                    <li>Processed underwriting tasks and prepared policy documentation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== EDUCATION ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Education</div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Master of Mathematical Sciences – Data Science</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Oct 2022 – Jul 2024</div>
+                        <div class="exp-location">Mbour-Thiès, Senegal</div>
+                    </div>
+                </div>
+                <div class="exp-company">African Institute for Mathematical Sciences (AIMS)</div>
+                <p class="edu-note">Grade: 84/100 (Very Good Pass) &nbsp;|&nbsp; Thesis: IoT and AI for Secure Remote Healthcare Monitoring</p>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Certificate of Effective Healthcare Management</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Sep 2023 – May 2024</div>
+                        <div class="exp-location">Canada (Online)</div>
+                    </div>
+                </div>
+                <div class="exp-company">University of Toronto Mississauga (MasterCard Scholarship – $4,000 CAD)</div>
+                <p class="edu-note">Healthcare governance, strategy, finance, risk management, data analysis &amp; digitisation</p>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Bachelor of Science – Actuarial Science</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Sep 2014 – Jul 2018</div>
+                        <div class="exp-location">Tamale, Ghana</div>
+                    </div>
+                </div>
+                <div class="exp-company">University for Development Studies</div>
+                <p class="edu-note">CGPA: 3.85/5.0 (Second Class Upper Division) &nbsp;|&nbsp; Thesis: Factors Influencing Academic Performance (CGPA) of Students</p>
+            </div>
+        </section>
+
+        <!-- ========== KEY PROJECTS ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Key Projects</div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">AI for Secure Remote Healthcare Monitoring</div>
+                    <div class="exp-meta">
+                        <div class="project-links">
+                            <a href="https://github.com/MrKunveng/GemmaCare" target="_blank" rel="noopener">GitHub</a>
+                            <span style="color:#94a3b8;">|</span>
+                            <a href="https://gemmacare.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Built a prototype achieving <strong>95.2% accuracy and F1 score</strong> by integrating an ensemble ML model with MedGemma 4b-it for disease prediction and clinical triage across 5 classes.</li>
+                    <li>Deployed an interactive Streamlit Cloud application for patient vitals input, risk analysis, and AI-guided triage feedback.</li>
+                </ul>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Dubai Real Estate Analytics</div>
+                    <div class="exp-meta">
+                        <div class="project-links">
+                            <a href="https://dubai-real-estateanalytics.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Interactive analytics dashboard for the Dubai property market; enables filtering by location, type, and price range with visualisations for data-driven investment decisions.</li>
+                </ul>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">PDF Merger Application</div>
+                    <div class="exp-meta">
+                        <div class="project-links">
+                            <a href="https://github.com/MrKunveng/PDF_merger" target="_blank" rel="noopener">GitHub</a>
+                            <span style="color:#94a3b8;">|</span>
+                            <a href="https://pdfmergerforfree.streamlit.app" target="_blank" rel="noopener">Deployed</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Streamlit web application for merging multiple PDF files into a single document, deployed on Streamlit Cloud for free public access.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== PUBLICATIONS & AWARDS ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Publication &amp; Awards</div>
+            <ul class="exp-bullets">
+                <li><strong>Publication:</strong> <em>Improving Speech Recognition for Ghanaian Accents Using Transformer-Based Accent Classification</em> – Accepted.</li>
+                <li><strong>Best Paper Runner-Up Award</strong> – PA-AISS 2025 Conference, for research quality, originality, and impact. ($200)</li>
+                <li><strong>AIMS Cooperative Program Scholarship</strong> – MasterCard Scholars Foundation &amp; AIMS-Senegal, 2022–2024. ($50,000)</li>
+                <li><strong>Healthcare Management Scholarship</strong> – MasterCard &amp; University of Toronto Mississauga, 2023–2024. ($4,000 CAD)</li>
+            </ul>
+        </section>
+
+        <!-- ========== CERTIFICATIONS ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Professional Certifications</div>
+            <table class="cert-table">
+                <tr>
+                    <td><strong>ALX Africa Data Science Programme</strong></td>
+                    <td>Jan 2025 – Feb 2026</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Microsoft Certified: Azure AI Fundamentals</strong>
+                        &nbsp;<a href="https://learn.microsoft.com/api/credentials/share/en-us/LukmanKunveng-9369/1D05B6F1E0B41A80?sharingId=356D066A94685345" target="_blank" rel="noopener">Verify</a>
+                    </td>
+                    <td>May 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Foundational Methods in Data Science</strong> – AIMS Research &amp; Innovation Centre, Rwanda</td>
+                    <td>Mar 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Advanced Learning Algorithms</strong> – DeepLearning.AI &amp; Stanford Online (Coursera)</td>
+                    <td>Mar 2023</td>
+                </tr>
+                <tr>
+                    <td><strong>Machine Learning A-Z: Python &amp; R</strong> – Super Data Science (Udemy)</td>
+                    <td>Mar 2023</td>
+                </tr>
+                <tr>
+                    <td><strong>Supervised ML: Regression &amp; Classification</strong> – DeepLearning.AI &amp; Stanford Online (Coursera)</td>
+                    <td>Jan 2023</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- ========== CONFERENCES ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Conferences &amp; Events</div>
+            <table class="cert-table">
+                <tr>
+                    <td><strong>Deep Learning Indaba</strong> – Kigali Convention &amp; Exhibition Village, Rwanda</td>
+                    <td>Aug 2025</td>
+                </tr>
+                <tr>
+                    <td><strong>PyCon Africa</strong> – University of Ghana, Legon-Accra</td>
+                    <td>Sep 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Deep Learning Indaba</strong> – University of Ghana, Legon-Accra</td>
+                    <td>Sep 2023</td>
+                </tr>
+                <tr>
+                    <td><strong>Bending Spoons Synapse AI Symposium</strong> – Milan, Italy (Online)</td>
+                    <td>Sep 2023</td>
+                </tr>
+                <tr>
+                    <td><strong>Winter School – Computational Modelling in Marine Ecology, Fisheries &amp; Climate</strong> – UCC, Ghana</td>
+                    <td>Jan 2023</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- ========== LEADERSHIP ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Leadership</div>
+            <p class="inline-list">
+                <strong>President</strong>, Actuarial Science Students' Association (2017/2018) &nbsp;&middot;&nbsp;
+                <strong>General Secretary</strong>, Actuarial Science Students' Association (2016/2017)
+            </p>
+        </section>
+
+        <!-- ========== LANGUAGES ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">Languages</div>
+            <p class="inline-list">English (Native) &nbsp;&middot;&nbsp; Arabic (Basic)</p>
+        </section>
+
+        <!-- ========== REFERENCES ========== -->
+        <section class="cv-section">
+            <div class="cv-section-title">References</div>
+            <div class="refs-grid">
+                <div class="ref-item">
+                    <div class="ref-name">Dr. Eliane Raïssa Fankem, PhD</div>
+                    Student Development Manager – AIMS Senegal<br>
+                    <a href="mailto:elian.r.fankem@aims-senegal.org">elian.r.fankem@aims-senegal.org</a><br>
+                    +237 673 050 683 / +221 773 095 053
+                </div>
+                <div class="ref-item">
+                    <div class="ref-name">Prof. Faisal Alhassan, PhD</div>
+                    Senior Lecturer – University for Development Studies, Tamale<br>
+                    <a href="mailto:afaisal@uds.edu.gh">afaisal@uds.edu.gh</a><br>
+                    +233 247 900 29
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="cv-footer">
+            Lukman Kunveng &nbsp;&bull;&nbsp; lukmankunveng@gmail.com &nbsp;&bull;&nbsp; +233 248 653 219
+        </div>
+
+    </div><!-- /cv-paper -->
+    </div><!-- /cv-wrapper -->
+
+    <script>
+        // Auto-trigger print if opened via the portfolio download button
+        window.addEventListener('load', () => {
+            if (document.referrer && (
+                document.referrer.includes('index.html') ||
+                document.referrer.includes('lukmankunveng')
+            )) {
+                setTimeout(() => window.print(), 600);
+            }
+        });
+    </script>
+</body>
+</html>
