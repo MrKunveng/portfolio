@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lukman Kunveng – CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* ============================================================
            Base Reset & Page
@@ -21,6 +22,7 @@
             --gray-mid: #64748b;
             --gray-light: #94a3b8;
             --border: #e2e8f0;
+            --chip-bg: #eff6ff;
             --bg: #ffffff;
         }
 
@@ -107,91 +109,149 @@
         .cv-paper {
             background: var(--bg);
             width: 100%;
-            max-width: 780px;
-            padding: 2.5rem 2.75rem;
+            max-width: 800px;
             box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .cv-body {
+            padding: 2rem 2.75rem 2.5rem;
         }
 
         /* ============================================================
-           Header
+           Header — modern banner
         ============================================================ */
         .cv-header {
-            border-bottom: 3px solid var(--blue);
-            padding-bottom: 1rem;
-            margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+            color: white;
+            padding: 2.25rem 2.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cv-avatar {
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .cv-name {
-            font-size: 28pt;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--navy);
-            line-height: 1;
-            margin-bottom: 0.25rem;
+            font-size: 22pt;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            line-height: 1.1;
+            margin-bottom: 0.3rem;
         }
 
         .cv-title {
-            font-size: 12pt;
+            font-size: 11pt;
             font-weight: 400;
-            color: var(--blue-mid);
-            margin-bottom: 0.6rem;
+            color: #bfdbfe;
+            margin-bottom: 0.7rem;
             letter-spacing: 0.01em;
         }
 
         .cv-contact {
-            font-size: 8.5pt;
-            color: var(--gray-dark);
+            font-size: 8pt;
+            color: rgba(255,255,255,0.85);
             display: flex;
             flex-wrap: wrap;
-            gap: 0 1rem;
+            gap: 0.4rem 1rem;
         }
 
-        .cv-contact a { color: var(--blue-mid); text-decoration: none; }
+        .cv-contact a { color: white; text-decoration: none; }
         .cv-contact a:hover { text-decoration: underline; }
-        .cv-contact span { display: flex; align-items: center; gap: 0.25rem; }
+        .cv-contact span { display: flex; align-items: center; gap: 0.3rem; }
+        .cv-contact .dot { opacity: 0.5; }
 
         /* ============================================================
            Sections
         ============================================================ */
-        .cv-section { margin-bottom: 1.1rem; }
+        .cv-section { margin: 1.35rem 0; }
+        .cv-section:first-child { margin-top: 0; }
 
         .cv-section-title {
-            font-size: 8.5pt;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 9.5pt;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--navy);
-            border-bottom: 1.5px solid var(--blue);
-            padding-bottom: 2px;
-            margin-bottom: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .cv-section-title::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            border-radius: 2px;
+            background: var(--blue-light);
+            flex-shrink: 0;
+        }
+
+        .cv-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
         }
 
         /* ============================================================
-           Competencies
+           Competencies — chip style
         ============================================================ */
         .competencies-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3px 2rem;
-        }
-
-        .comp-item {
             display: flex;
-            gap: 0.4rem;
-            font-size: 9pt;
+            flex-wrap: wrap;
+            gap: 0.45rem;
         }
 
-        .comp-label {
-            font-weight: 600;
-            min-width: 110px;
+        .comp-chip {
+            background: var(--chip-bg);
+            border: 1px solid #dbeafe;
+            border-radius: 999px;
+            padding: 0.3rem 0.8rem;
+            font-size: 8.5pt;
             color: var(--gray-dark);
+            display: inline-flex;
+            gap: 0.35rem;
         }
+
+        .comp-chip strong { color: var(--blue); font-weight: 700; }
 
         /* ============================================================
-           Experience Entries
+           Experience Entries — timeline style
         ============================================================ */
-        .exp-entry { margin-bottom: 0.95rem; }
+        .exp-entry {
+            position: relative;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+            margin-bottom: 1.1rem;
+        }
         .exp-entry:last-child { margin-bottom: 0; }
+
+        .exp-entry::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--blue-light);
+            border: 2px solid white;
+        }
 
         .exp-header {
             display: flex;
@@ -214,7 +274,7 @@
         .exp-date {
             font-size: 8.5pt;
             color: var(--gray-dark);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .exp-location {
@@ -243,7 +303,7 @@
         }
 
         /* ============================================================
-           Education
+           Project links
         ============================================================ */
         .edu-note {
             font-size: 8.5pt;
@@ -251,14 +311,12 @@
             margin-top: 2px;
         }
 
-        /* ============================================================
-           Projects
-        ============================================================ */
         .project-links {
             display: inline-flex;
             gap: 0.5rem;
             font-size: 8pt;
             font-style: normal;
+            margin-bottom: 3px;
         }
 
         .project-links a {
@@ -269,28 +327,52 @@
         .project-links a:hover { text-decoration: underline; }
 
         /* ============================================================
-           Certifications Table
+           Certifications / Conferences — single-column rows
         ============================================================ */
-        .cert-table {
-            width: 100%;
-            border-collapse: collapse;
+        .cert-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
             font-size: 9pt;
-        }
-
-        .cert-table td {
-            padding: 2.5px 0;
             color: var(--gray-dark);
-            vertical-align: top;
+            padding: 4px 0;
         }
 
-        .cert-table td:last-child {
-            text-align: right;
+        .cert-row:not(:last-child) {
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .cert-row .cert-date {
+            flex-shrink: 0;
             color: var(--gray-mid);
             white-space: nowrap;
+            font-size: 8pt;
             padding-left: 1rem;
         }
 
-        .cert-table a { color: var(--blue-mid); text-decoration: none; font-size: 8pt; }
+        .cert-row a { color: var(--blue-mid); text-decoration: none; font-size: 8pt; }
+
+        /* ============================================================
+           Awards list
+        ============================================================ */
+        .award-item {
+            display: flex;
+            gap: 0.6rem;
+            font-size: 9pt;
+            color: var(--gray-dark);
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .award-item .award-dot {
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--blue-light);
+            margin-top: 6px;
+        }
 
         /* ============================================================
            Inline lists
@@ -303,13 +385,15 @@
         /* ============================================================
            References
         ============================================================ */
-        .refs-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
+        .ref-item {
+            font-size: 8.5pt;
+            color: var(--gray-dark);
+            line-height: 1.6;
+            border-left: 3px solid var(--blue-light);
+            padding-left: 0.6rem;
+            margin-bottom: 0.6rem;
         }
-
-        .ref-item { font-size: 8.5pt; color: var(--gray-dark); line-height: 1.6; }
+        .ref-item:last-child { margin-bottom: 0; }
         .ref-name { font-weight: 700; color: var(--navy); }
         .ref-item a { color: var(--blue-mid); text-decoration: none; }
 
@@ -331,6 +415,12 @@
         @media print {
             html { font-size: 9.5pt; }
 
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
             body { background: white; }
 
             .controls { display: none !important; }
@@ -342,15 +432,16 @@
 
             .cv-paper {
                 box-shadow: none;
-                padding: 0;
                 max-width: 100%;
             }
 
             @page {
                 size: A4;
-                margin: 1.5cm 2cm;
+                margin: 1.2cm 1.6cm;
             }
 
+            .cv-header { padding: 1.4rem 0; margin: 0 -1.6cm 1rem; padding-left: 1.6cm; padding-right: 1.6cm; }
+            .cv-body { padding: 0; }
             .cv-section { page-break-inside: avoid; }
             .exp-entry { page-break-inside: avoid; }
             a { color: var(--blue-mid) !important; }
@@ -377,17 +468,27 @@
 
         <!-- ========== HEADER ========== -->
         <header class="cv-header">
-            <div class="cv-name">LUKMAN KUNVENG</div>
-            <div class="cv-title">Data Scientist &nbsp;|&nbsp; Analytics &amp; AI Solutions</div>
-            <div class="cv-contact">
-                <span>+233 248 653 219</span>
-                <span><a href="mailto:lukmankunveng@gmail.com">lukmankunveng@gmail.com</a></span>
-                <span>Dubai, UAE</span>
-                <span><a href="https://github.com/MrKunveng" target="_blank" rel="noopener">github.com/MrKunveng</a></span>
-                <span><a href="https://lukmankunveng.netlify.app" target="_blank" rel="noopener">lukmankunveng.netlify.app</a></span>
-                <span><a href="https://www.linkedin.com/in/lukman-kunveng-4577b7106" target="_blank" rel="noopener">LinkedIn</a></span>
+            <div class="cv-avatar">LK</div>
+            <div>
+                <div class="cv-name">LUKMAN KUNVENG</div>
+                <div class="cv-title">Data Scientist &nbsp;|&nbsp; Analytics &amp; AI Solutions</div>
+                <div class="cv-contact">
+                    <span>+233 248 653 219</span>
+                    <span class="dot">&middot;</span>
+                    <span><a href="mailto:lukmankunveng@gmail.com">lukmankunveng@gmail.com</a></span>
+                    <span class="dot">&middot;</span>
+                    <span>Dubai, UAE</span>
+                    <span class="dot">&middot;</span>
+                    <span><a href="https://github.com/MrKunveng" target="_blank" rel="noopener">github.com/MrKunveng</a></span>
+                    <span class="dot">&middot;</span>
+                    <span><a href="https://lukmankunveng.netlify.app" target="_blank" rel="noopener">lukmankunveng.netlify.app</a></span>
+                    <span class="dot">&middot;</span>
+                    <span><a href="https://www.linkedin.com/in/lukman-kunveng-4577b7106" target="_blank" rel="noopener">LinkedIn</a></span>
+                </div>
             </div>
         </header>
+
+        <div class="cv-body">
 
         <!-- ========== PROFESSIONAL SUMMARY ========== -->
         <section class="cv-section">
@@ -401,14 +502,14 @@
         <section class="cv-section">
             <div class="cv-section-title">Core Competencies</div>
             <div class="competencies-grid">
-                <div class="comp-item"><span class="comp-label">Programming:</span><span>Python, R, SQL</span></div>
-                <div class="comp-item"><span class="comp-label">Cloud &amp; Tools:</span><span>Microsoft Azure, Streamlit, Git</span></div>
-                <div class="comp-item"><span class="comp-label">Machine Learning:</span><span>Scikit-learn, TensorFlow, PyTorch</span></div>
-                <div class="comp-item"><span class="comp-label">Analytics:</span><span>Predictive Modelling, Statistical Analysis</span></div>
-                <div class="comp-item"><span class="comp-label">AI &amp; NLP:</span><span>LLMs, GPT, Rasa, Hugging Face, Whisper</span></div>
-                <div class="comp-item"><span class="comp-label">Financial:</span><span>Credit Risk, Treasury, Portfolio Analysis</span></div>
-                <div class="comp-item"><span class="comp-label">Visualisation:</span><span>Power BI, Matplotlib, Seaborn</span></div>
-                <div class="comp-item"><span class="comp-label">Office Suite:</span><span>Advanced Excel, Word, PowerPoint</span></div>
+                <span class="comp-chip"><strong>Programming</strong> Python, R, SQL</span>
+                <span class="comp-chip"><strong>Cloud &amp; Tools</strong> Microsoft Azure, Streamlit, Git</span>
+                <span class="comp-chip"><strong>Machine Learning</strong> Scikit-learn, TensorFlow, PyTorch</span>
+                <span class="comp-chip"><strong>Analytics</strong> Predictive Modelling, Statistical Analysis</span>
+                <span class="comp-chip"><strong>AI &amp; NLP</strong> LLMs, GPT, Rasa, Hugging Face, Whisper</span>
+                <span class="comp-chip"><strong>Financial</strong> Credit Risk, Treasury, Portfolio Analysis</span>
+                <span class="comp-chip"><strong>Visualisation</strong> Power BI, Matplotlib, Seaborn</span>
+                <span class="comp-chip"><strong>Office Suite</strong> Advanced Excel, Word, PowerPoint</span>
             </div>
         </section>
 
@@ -431,6 +532,21 @@
                     <li>Built and optimised content-based recommendation engines for product upselling, increasing attach rates and average transaction value.</li>
                     <li>Delivered data-driven reports and forecasts to senior leadership, translating complex analytical insights into actionable business strategy.</li>
                     <li>Conducted end-to-end data pipeline management – from data collection and cleaning to model evaluation and deployment.</li>
+                </ul>
+            </div>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <div class="exp-title">Software Development Consultant</div>
+                    <div class="exp-meta">
+                        <div class="exp-date">Nov 2024 – May 2025</div>
+                        <div class="exp-location">Accra, Ghana (Remote)</div>
+                    </div>
+                </div>
+                <div class="exp-company">Ayzee A.I &amp; Technology</div>
+                <ul class="exp-bullets">
+                    <li>Identified, designed, and deployed AI-driven solutions automating digital workflows across multiple client projects, enhancing operational efficiency.</li>
+                    <li>Provided expert-level programming support including debugging, code optimisation, and end-to-end software implementation.</li>
                 </ul>
             </div>
 
@@ -523,7 +639,6 @@
                     </div>
                 </div>
                 <div class="exp-company">University of Toronto Mississauga (MasterCard Scholarship – $4,000 CAD)</div>
-                <p class="edu-note">Healthcare governance, strategy, finance, risk management, data analysis &amp; digitisation</p>
             </div>
 
             <div class="exp-entry">
@@ -535,7 +650,7 @@
                     </div>
                 </div>
                 <div class="exp-company">University for Development Studies</div>
-                <p class="edu-note">CGPA: 3.85/5.0 (Second Class Upper Division) &nbsp;|&nbsp; Thesis: Factors Influencing Academic Performance (CGPA) of Students</p>
+                <p class="edu-note">CGPA: 3.85/5.0 (Second Class Upper Division)</p>
             </div>
         </section>
 
@@ -594,106 +709,58 @@
         <!-- ========== PUBLICATIONS & AWARDS ========== -->
         <section class="cv-section">
             <div class="cv-section-title">Publication &amp; Awards</div>
-            <ul class="exp-bullets">
-                <li><strong>Publication:</strong> <em>Improving Speech Recognition for Ghanaian Accents Using Transformer-Based Accent Classification</em> – Accepted.</li>
-                <li><strong>Best Paper Runner-Up Award</strong> – PA-AISS 2025 Conference, for research quality, originality, and impact. ($200)</li>
-                <li><strong>AIMS Cooperative Program Scholarship</strong> – MasterCard Scholars Foundation &amp; AIMS-Senegal, 2022–2024. ($50,000)</li>
-                <li><strong>Healthcare Management Scholarship</strong> – MasterCard &amp; University of Toronto Mississauga, 2023–2024. ($4,000 CAD)</li>
-            </ul>
+            <div class="award-item"><span class="award-dot"></span><span><strong>Publication:</strong> <em>Improving Speech Recognition for Ghanaian Accents Using Transformer-Based Accent Classification</em> – Accepted.</span></div>
+            <div class="award-item"><span class="award-dot"></span><span><strong>Best Paper Runner-Up Award</strong> – PA-AISS 2025 Conference, for research quality, originality, and impact. ($200)</span></div>
+            <div class="award-item"><span class="award-dot"></span><span><strong>AIMS Cooperative Program Scholarship</strong> – MasterCard Scholars Foundation &amp; AIMS-Senegal, 2022–2024. ($50,000)</span></div>
+            <div class="award-item"><span class="award-dot"></span><span><strong>Healthcare Management Scholarship</strong> – MasterCard &amp; University of Toronto Mississauga, 2023–2024. ($4,000 CAD)</span></div>
         </section>
 
         <!-- ========== CERTIFICATIONS ========== -->
         <section class="cv-section">
             <div class="cv-section-title">Professional Certifications</div>
-            <table class="cert-table">
-                <tr>
-                    <td><strong>ALX Africa Data Science Programme</strong></td>
-                    <td>Jan 2025 – Feb 2026</td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>Microsoft Certified: Azure AI Fundamentals</strong>
-                        &nbsp;<a href="https://learn.microsoft.com/api/credentials/share/en-us/LukmanKunveng-9369/1D05B6F1E0B41A80?sharingId=356D066A94685345" target="_blank" rel="noopener">Verify</a>
-                    </td>
-                    <td>May 2024</td>
-                </tr>
-                <tr>
-                    <td><strong>Foundational Methods in Data Science</strong> – AIMS Research &amp; Innovation Centre, Rwanda</td>
-                    <td>Mar 2024</td>
-                </tr>
-                <tr>
-                    <td><strong>Advanced Learning Algorithms</strong> – DeepLearning.AI &amp; Stanford Online (Coursera)</td>
-                    <td>Mar 2023</td>
-                </tr>
-                <tr>
-                    <td><strong>Machine Learning A-Z: Python &amp; R</strong> – Super Data Science (Udemy)</td>
-                    <td>Mar 2023</td>
-                </tr>
-                <tr>
-                    <td><strong>Supervised ML: Regression &amp; Classification</strong> – DeepLearning.AI &amp; Stanford Online (Coursera)</td>
-                    <td>Jan 2023</td>
-                </tr>
-            </table>
+            <div class="cert-row"><span><strong>ALX Africa Data Science Programme</strong></span><span class="cert-date">Jan 2025 – Feb 2026</span></div>
+            <div class="cert-row"><span><strong>Microsoft Certified: Azure AI Fundamentals</strong> &nbsp;<a href="https://learn.microsoft.com/api/credentials/share/en-us/LukmanKunveng-9369/1D05B6F1E0B41A80?sharingId=356D066A94685345" target="_blank" rel="noopener">Verify</a></span><span class="cert-date">May 2024</span></div>
+            <div class="cert-row"><span><strong>Foundational Methods in Data Science</strong> – AIMS Research &amp; Innovation Centre, Rwanda</span><span class="cert-date">Mar 2024</span></div>
+            <div class="cert-row"><span><strong>Google Data Analytics: Foundations</strong> – Coursera</span><span class="cert-date">Apr 2023</span></div>
+            <div class="cert-row"><span><strong>Advanced Learning Algorithms</strong> – DeepLearning.AI &amp; Stanford Online (Coursera)</span><span class="cert-date">Mar 2023</span></div>
+            <div class="cert-row"><span><strong>Machine Learning A-Z: Python &amp; R</strong> – Super Data Science (Udemy)</span><span class="cert-date">Mar 2023</span></div>
+            <div class="cert-row"><span><strong>Supervised ML: Regression &amp; Classification</strong> – DeepLearning.AI &amp; Stanford Online (Coursera)</span><span class="cert-date">Jan 2023</span></div>
         </section>
 
         <!-- ========== CONFERENCES ========== -->
         <section class="cv-section">
             <div class="cv-section-title">Conferences &amp; Events</div>
-            <table class="cert-table">
-                <tr>
-                    <td><strong>Deep Learning Indaba</strong> – Kigali Convention &amp; Exhibition Village, Rwanda</td>
-                    <td>Aug 2025</td>
-                </tr>
-                <tr>
-                    <td><strong>PyCon Africa</strong> – University of Ghana, Legon-Accra</td>
-                    <td>Sep 2024</td>
-                </tr>
-                <tr>
-                    <td><strong>Deep Learning Indaba</strong> – University of Ghana, Legon-Accra</td>
-                    <td>Sep 2023</td>
-                </tr>
-                <tr>
-                    <td><strong>Bending Spoons Synapse AI Symposium</strong> – Milan, Italy (Online)</td>
-                    <td>Sep 2023</td>
-                </tr>
-                <tr>
-                    <td><strong>Winter School – Computational Modelling in Marine Ecology, Fisheries &amp; Climate</strong> – UCC, Ghana</td>
-                    <td>Jan 2023</td>
-                </tr>
-            </table>
+            <div class="cert-row"><span><strong>Deep Learning Indaba</strong> – Kigali Convention &amp; Exhibition Village, Rwanda</span><span class="cert-date">Aug 2025</span></div>
+            <div class="cert-row"><span><strong>PyCon Africa</strong> – University of Ghana, Legon-Accra</span><span class="cert-date">Sep 2024</span></div>
+            <div class="cert-row"><span><strong>Deep Learning Indaba</strong> – University of Ghana, Legon-Accra</span><span class="cert-date">Sep 2023</span></div>
+            <div class="cert-row"><span><strong>Bending Spoons Synapse AI Symposium</strong> – Milan, Italy (Online)</span><span class="cert-date">Sep 2023</span></div>
+            <div class="cert-row"><span><strong>Winter School – Computational Modelling in Marine Ecology, Fisheries &amp; Climate</strong> – UCC, Ghana</span><span class="cert-date">Jan 2023</span></div>
         </section>
 
-        <!-- ========== LEADERSHIP ========== -->
+        <!-- ========== LEADERSHIP & LANGUAGES ========== -->
         <section class="cv-section">
-            <div class="cv-section-title">Leadership</div>
+            <div class="cv-section-title">Leadership &amp; Languages</div>
             <p class="inline-list">
                 <strong>President</strong>, Actuarial Science Students' Association (2017/2018) &nbsp;&middot;&nbsp;
-                <strong>General Secretary</strong>, Actuarial Science Students' Association (2016/2017)
+                <strong>General Secretary</strong>, Actuarial Science Students' Association (2016/2017) &nbsp;&middot;&nbsp;
+                English (Native) &nbsp;&middot;&nbsp; Arabic (Basic)
             </p>
-        </section>
-
-        <!-- ========== LANGUAGES ========== -->
-        <section class="cv-section">
-            <div class="cv-section-title">Languages</div>
-            <p class="inline-list">English (Native) &nbsp;&middot;&nbsp; Arabic (Basic)</p>
         </section>
 
         <!-- ========== REFERENCES ========== -->
         <section class="cv-section">
             <div class="cv-section-title">References</div>
-            <div class="refs-grid">
-                <div class="ref-item">
-                    <div class="ref-name">Dr. Eliane Raïssa Fankem, PhD</div>
-                    Student Development Manager – AIMS Senegal<br>
-                    <a href="mailto:elian.r.fankem@aims-senegal.org">elian.r.fankem@aims-senegal.org</a><br>
-                    +237 673 050 683 / +221 773 095 053
-                </div>
-                <div class="ref-item">
-                    <div class="ref-name">Prof. Faisal Alhassan, PhD</div>
-                    Senior Lecturer – University for Development Studies, Tamale<br>
-                    <a href="mailto:afaisal@uds.edu.gh">afaisal@uds.edu.gh</a><br>
-                    +233 247 900 29
-                </div>
+            <div class="ref-item">
+                <div class="ref-name">Dr. Eliane Raïssa Fankem, PhD</div>
+                Student Development Manager – AIMS Senegal<br>
+                <a href="mailto:elian.r.fankem@aims-senegal.org">elian.r.fankem@aims-senegal.org</a><br>
+                +237 673 050 683 / +221 773 095 053
+            </div>
+            <div class="ref-item">
+                <div class="ref-name">Prof. Faisal Alhassan, PhD</div>
+                Senior Lecturer – University for Development Studies, Tamale<br>
+                <a href="mailto:afaisal@uds.edu.gh">afaisal@uds.edu.gh</a><br>
+                +233 247 900 29
             </div>
         </section>
 
@@ -701,6 +768,8 @@
         <div class="cv-footer">
             Lukman Kunveng &nbsp;&bull;&nbsp; lukmankunveng@gmail.com &nbsp;&bull;&nbsp; +233 248 653 219
         </div>
+
+        </div><!-- /cv-body -->
 
     </div><!-- /cv-paper -->
     </div><!-- /cv-wrapper -->
