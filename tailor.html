@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Tailor CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+
+    <div class="cv-wrapper" id="form-view">
+        <form class="tailor-form" id="tailor-form">
+            <h1>Tailor my CV</h1>
+            <p class="tailor-hint">Paste a job advert below to generate a CV that reorders and emphasises your real experience for that role. Nothing is invented.</p>
+
+            <div id="form-error" class="tailor-error" hidden></div>
+
+            <div class="tailor-field">
+                <label for="passphrase">Passphrase</label>
+                <input type="password" id="passphrase" autocomplete="off" required>
+            </div>
+
+            <div class="tailor-field">
+                <label for="job-ad">Job advert / call for application</label>
+                <textarea id="job-ad" required placeholder="Paste the full job advert text here…"></textarea>
+            </div>
+
+            <button type="submit" class="tailor-submit" id="submit-btn">Generate Tailored CV</button>
+        </form>
+    </div>
+
+    <div class="cv-wrapper" id="result-view" style="display:none;">
+        <div class="controls">
+            <span class="controls-brand">Lukman Kunveng — Tailored CV</span>
+            <div class="controls-actions">
+                <span class="controls-hint">Tip: choose "Save as PDF" in the print dialog</span>
+                <button class="btn-ctrl btn-download" onclick="window.print()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download / Print
+                </button>
+                <button class="btn-ctrl btn-close" type="button" onclick="backToForm()">&larr; Try another advert</button>
+            </div>
+        </div>
+
+        <div class="cv-paper">
+            <header class="cv-header">
+                <div class="cv-avatar">LK</div>
+                <div>
+                    <div class="cv-name">LUKMAN KUNVENG</div>
+                    <div class="cv-title">Data Scientist &nbsp;|&nbsp; Analytics &amp; AI Solutions</div>
+                    <div class="cv-contact">
+                        <span>+233 248 653 219</span>
+                        <span class="dot">&middot;</span>
+                        <span><a href="mailto:lukmankunveng@gmail.com">lukmankunveng@gmail.com</a></span>
+                        <span class="dot">&middot;</span>
+                        <span>Dubai, UAE</span>
+                        <span class="dot">&middot;</span>
+                        <span><a href="https://github.com/MrKunveng" target="_blank" rel="noopener">github.com/MrKunveng</a></span>
+                        <span class="dot">&middot;</span>
+                        <span><a href="https://lukmankunveng.netlify.app" target="_blank" rel="noopener">lukmankunveng.netlify.app</a></span>
+                        <span class="dot">&middot;</span>
+                        <span><a href="https://www.linkedin.com/in/lukman-kunveng-4577b7106" target="_blank" rel="noopener">LinkedIn</a></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cv-body" id="cv-body"></div>
+
+            <div class="cv-footer">
+                Lukman Kunveng &nbsp;&bull;&nbsp; lukmankunveng@gmail.com &nbsp;&bull;&nbsp; +233 248 653 219
+            </div>
+        </div>
+    </div>
+
+    <script src="cv-render.js"></script>
+    <script>
+        const formView = document.getElementById('form-view');
+        const resultView = document.getElementById('result-view');
+        const form = document.getElementById('tailor-form');
+        const errorBox = document.getElementById('form-error');
+        const submitBtn = document.getElementById('submit-btn');
+
+        function showError(message) {
+            errorBox.textContent = message;
+            errorBox.hidden = false;
+        }
+
+        function clearError() {
+            errorBox.hidden = true;
+            errorBox.textContent = '';
+        }
+
+        function backToForm() {
+            resultView.style.display = 'none';
+            formView.style.display = 'flex';
+            clearError();
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            clearError();
+
+            const passphrase = document.getElementById('passphrase').value;
+            const jobAd = document.getElementById('job-ad').value;
+
+            if (jobAd.trim().length < 20) {
+                showError('Please paste the full job advert text.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Generating…';
+
+            try {
+                const res = await fetch('/.netlify/functions/tailor-cv', {
+                    method: 'POST',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({ passphrase, jobAd }),
+                });
+
+                const data = await res.json();
+
+                if (!res.ok) {
+                    showError(data.error || 'Something went wrong. Try again.');
+                    return;
+                }
+
+                document.getElementById('cv-body').innerHTML = renderCV(data.cv);
+                formView.style.display = 'none';
+                resultView.style.display = 'flex';
+            } catch (err) {
+                showError('Network error — check your connection and try again.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Generate Tailored CV';
+            }
+        });
+    </script>
+</body>
+</html>

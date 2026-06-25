@@ -23,3 +23,7 @@ node_modules/
 # Build outputs (if you add any build tools)
 dist/
 build/
+
+# Secrets — local Netlify dev env vars (ANTHROPIC_API_KEY, TAILOR_PASSPHRASE)
+.env
+.netlify/

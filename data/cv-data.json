@@ -1,0 +1,184 @@
+{
+  "summary": "Data Scientist with 3+ years of experience building AI and machine learning solutions for business impact. Proven track record in predictive analytics, data-driven decision support, and deploying end-to-end ML systems. Achieved 95.2% accuracy in disease prediction using ensemble ML and LLMs, and delivered measurable revenue growth through recommendation engines. Former banking professional with hands-on experience in credit risk assessment, treasury operations, and financial analytics. Combines deep technical expertise with strong domain knowledge in financial services.",
+  "skills": [
+    { "key": "programming", "label": "Programming", "value": "Python, R, SQL" },
+    { "key": "cloud", "label": "Cloud & Tools", "value": "Microsoft Azure, Streamlit, Git" },
+    { "key": "ml", "label": "Machine Learning", "value": "Scikit-learn, TensorFlow, PyTorch" },
+    { "key": "analytics", "label": "Analytics", "value": "Predictive Modelling, Statistical Analysis" },
+    { "key": "ai-nlp", "label": "AI & NLP", "value": "LLMs, GPT, Rasa, Hugging Face, Whisper" },
+    { "key": "financial", "label": "Financial", "value": "Credit Risk, Treasury, Portfolio Analysis" },
+    { "key": "visualisation", "label": "Visualisation", "value": "Power BI, Matplotlib, Seaborn" },
+    { "key": "office", "label": "Office Suite", "value": "Advanced Excel, Word, PowerPoint" }
+  ],
+  "skillsOrder": ["programming", "cloud", "ml", "analytics", "ai-nlp", "financial", "visualisation", "office"],
+  "experience": [
+    {
+      "roleId": "armishumair",
+      "title": "Data Scientist (Hybrid)",
+      "company": "Armishumair for Social Media Applications",
+      "dateRange": "Oct 2025 – Present",
+      "location": "Dubai, UAE",
+      "bullets": [
+        "Designed and maintained dynamic performance dashboards using Power BI and advanced Excel to track KPIs across pipeline, conversion, and revenue metrics.",
+        "Developed and deployed AI-powered recommendation systems and customer segmentation models, driving 25% revenue growth during peak season.",
+        "Built and optimised content-based recommendation engines for product upselling, increasing attach rates and average transaction value.",
+        "Delivered data-driven reports and forecasts to senior leadership, translating complex analytical insights into actionable business strategy.",
+        "Conducted end-to-end data pipeline management – from data collection and cleaning to model evaluation and deployment."
+      ]
+    },
+    {
+      "roleId": "ayzee",
+      "title": "Software Development Consultant",
+      "company": "Ayzee A.I & Technology",
+      "dateRange": "Nov 2024 – May 2025",
+      "location": "Accra, Ghana (Remote)",
+      "bullets": [
+        "Identified, designed, and deployed AI-driven solutions automating digital workflows across multiple client projects, enhancing operational efficiency.",
+        "Provided expert-level programming support including debugging, code optimisation, and end-to-end software implementation."
+      ]
+    },
+    {
+      "roleId": "ai4sense",
+      "title": "Azure Data Scientist",
+      "company": "Sensor6ty / ai4Sense",
+      "dateRange": "Jun 2023 – Jul 2024",
+      "location": "Saint-Quentin, France (Remote)",
+      "bullets": [
+        "Engineered a high-accuracy speech-to-text system, boosting transcription performance across diverse accents and noisy environments.",
+        "Developed a Voice Assistant chatbot using Rasa and GPT-3 for media-player interaction, improving automation and accessibility.",
+        "Evaluated and optimised speaker diarisation techniques for multi-speaker audio, enhancing conversation segmentation quality.",
+        "Applied advanced ML techniques in Python and R for data analysis, visualisation, and production-grade research pipelines.",
+        "Worked with Microsoft Azure Cognitive Services and Hugging Face to improve speech recognition systems."
+      ]
+    },
+    {
+      "roleId": "first-atlantic",
+      "title": "Direct Sales Executive",
+      "company": "First Atlantic Bank Ltd",
+      "dateRange": "Jan 2019 – Dec 2020",
+      "location": "Accra, Ghana",
+      "bullets": [
+        "Expanded customer base through strategic prospecting and relationship management, contributing to deposit mobilisation and product uptake.",
+        "Assessed creditworthiness of loan applicants and delivered risk-based recommendations, supporting high-quality credit decisions and portfolio growth."
+      ]
+    },
+    {
+      "roleId": "energy-bank",
+      "title": "Assistant Treasury Trainee",
+      "company": "Energy Commercial Bank Ltd",
+      "dateRange": "Sep 2018 – Dec 2018",
+      "location": "Accra, Ghana",
+      "bullets": [
+        "Participated in Money Market trading activities and contributed to strategic financial decision-making.",
+        "Monitored the bank's interest rate positions and Net Open Position, ensuring optimal financial stability."
+      ]
+    },
+    {
+      "roleId": "sic-life",
+      "title": "Intern – Data & Underwriting",
+      "company": "SIC Life Insurance Ltd",
+      "dateRange": "Jun 2017 – Dec 2017",
+      "location": "Techiman, Bono East",
+      "bullets": [
+        "Performed time-series analysis of monthly claims data to identify predominant patterns for management decision-making.",
+        "Processed underwriting tasks and prepared policy documentation."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Mathematical Sciences – Data Science",
+      "institution": "African Institute for Mathematical Sciences (AIMS)",
+      "dateRange": "Oct 2022 – Jul 2024",
+      "location": "Mbour-Thiès, Senegal",
+      "note": "Grade: 84/100 (Very Good Pass) &nbsp;|&nbsp; Thesis: IoT and AI for Secure Remote Healthcare Monitoring"
+    },
+    {
+      "degree": "Certificate of Effective Healthcare Management",
+      "institution": "University of Toronto Mississauga (MasterCard Scholarship – $4,000 CAD)",
+      "dateRange": "Sep 2023 – May 2024",
+      "location": "Canada (Online)",
+      "note": ""
+    },
+    {
+      "degree": "Bachelor of Science – Actuarial Science",
+      "institution": "University for Development Studies",
+      "dateRange": "Sep 2014 – Jul 2018",
+      "location": "Tamale, Ghana",
+      "note": "CGPA: 3.85/5.0 (Second Class Upper Division)"
+    }
+  ],
+  "projects": [
+    {
+      "id": "healthcare-ai",
+      "title": "AI for Secure Remote Healthcare Monitoring",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/MrKunveng/GemmaCare" },
+        { "label": "Live Demo", "url": "https://gemmacare.streamlit.app" }
+      ],
+      "bullets": [
+        "Built a prototype achieving 95.2% accuracy and F1 score by integrating an ensemble ML model with MedGemma 4b-it for disease prediction and clinical triage across 5 classes.",
+        "Deployed an interactive Streamlit Cloud application for patient vitals input, risk analysis, and AI-guided triage feedback."
+      ]
+    },
+    {
+      "id": "dubai-real-estate",
+      "title": "Dubai Real Estate Analytics",
+      "links": [
+        { "label": "Live Demo", "url": "https://dubai-real-estateanalytics.streamlit.app" }
+      ],
+      "bullets": [
+        "Interactive analytics dashboard for the Dubai property market; enables filtering by location, type, and price range with visualisations for data-driven investment decisions."
+      ]
+    },
+    {
+      "id": "pdf-merger",
+      "title": "PDF Merger Application",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/MrKunveng/PDF_merger" },
+        { "label": "Deployed", "url": "https://pdfmergerforfree.streamlit.app" }
+      ],
+      "bullets": [
+        "Streamlit web application for merging multiple PDF files into a single document, deployed on Streamlit Cloud for free public access."
+      ]
+    }
+  ],
+  "projectsOrder": ["healthcare-ai", "dubai-real-estate", "pdf-merger"],
+  "awards": [
+    "<strong>Publication:</strong> <em>Improving Speech Recognition for Ghanaian Accents Using Transformer-Based Accent Classification</em> – Accepted.",
+    "<strong>Best Paper Runner-Up Award</strong> – PA-AISS 2025 Conference, for research quality, originality, and impact. ($200)",
+    "<strong>AIMS Cooperative Program Scholarship</strong> – MasterCard Scholars Foundation & AIMS-Senegal, 2022–2024. ($50,000)",
+    "<strong>Healthcare Management Scholarship</strong> – MasterCard & University of Toronto Mississauga, 2023–2024. ($4,000 CAD)"
+  ],
+  "certifications": [
+    { "name": "ALX Africa Data Science Programme", "detail": "", "date": "Jan 2025 – Feb 2026", "verifyUrl": "" },
+    { "name": "Microsoft Certified: Azure AI Fundamentals", "detail": "", "date": "May 2024", "verifyUrl": "https://learn.microsoft.com/api/credentials/share/en-us/LukmanKunveng-9369/1D05B6F1E0B41A80?sharingId=356D066A94685345" },
+    { "name": "Foundational Methods in Data Science", "detail": "AIMS Research & Innovation Centre, Rwanda", "date": "Mar 2024", "verifyUrl": "" },
+    { "name": "Google Data Analytics: Foundations", "detail": "Coursera", "date": "Apr 2023", "verifyUrl": "" },
+    { "name": "Advanced Learning Algorithms", "detail": "DeepLearning.AI & Stanford Online (Coursera)", "date": "Mar 2023", "verifyUrl": "" },
+    { "name": "Machine Learning A-Z: Python & R", "detail": "Super Data Science (Udemy)", "date": "Mar 2023", "verifyUrl": "" },
+    { "name": "Supervised ML: Regression & Classification", "detail": "DeepLearning.AI & Stanford Online (Coursera)", "date": "Jan 2023", "verifyUrl": "" }
+  ],
+  "conferences": [
+    { "name": "Deep Learning Indaba", "detail": "Kigali Convention & Exhibition Village, Rwanda", "date": "Aug 2025" },
+    { "name": "PyCon Africa", "detail": "University of Ghana, Legon-Accra", "date": "Sep 2024" },
+    { "name": "Deep Learning Indaba", "detail": "University of Ghana, Legon-Accra", "date": "Sep 2023" },
+    { "name": "Bending Spoons Synapse AI Symposium", "detail": "Milan, Italy (Online)", "date": "Sep 2023" },
+    { "name": "Winter School – Computational Modelling in Marine Ecology, Fisheries & Climate", "detail": "UCC, Ghana", "date": "Jan 2023" }
+  ],
+  "leadershipLanguages": "<strong>President</strong>, Actuarial Science Students' Association (2017/2018) &nbsp;&middot;&nbsp; <strong>General Secretary</strong>, Actuarial Science Students' Association (2016/2017) &nbsp;&middot;&nbsp; English (Native) &nbsp;&middot;&nbsp; Arabic (Basic)",
+  "references": [
+    {
+      "name": "Dr. Eliane Raïssa Fankem, PhD",
+      "role": "Student Development Manager – AIMS Senegal",
+      "email": "elian.r.fankem@aims-senegal.org",
+      "phone": "+237 673 050 683 / +221 773 095 053"
+    },
+    {
+      "name": "Prof. Faisal Alhassan, PhD",
+      "role": "Senior Lecturer – University for Development Studies, Tamale",
+      "email": "afaisal@uds.edu.gh",
+      "phone": "+233 247 900 29"
+    }
+  ]
+}

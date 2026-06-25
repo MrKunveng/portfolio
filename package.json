@@ -1,0 +1,12 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Lukman Kunveng portfolio — static site with a Netlify Function for CV tailoring",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.38.1"
+  }
+}
