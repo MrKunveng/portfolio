@@ -200,8 +200,16 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            const el = entry.target;
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            observer.unobserve(el);
+            // Clear inline styles once revealed so CSS hover transitions apply
+            setTimeout(() => {
+                el.style.opacity = '';
+                el.style.transform = '';
+                el.style.transition = '';
+            }, 600);
         }
     });
 }, observerOptions);
@@ -209,11 +217,13 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll('.timeline-item, .project-card, .education-card, .skill-category');
-    
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     animateElements.forEach(el => {
+        if (prefersReducedMotion) return;
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
         observer.observe(el);
     });
 });
@@ -224,11 +234,7 @@ const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const skillBar = entry.target;
-            const width = skillBar.style.width;
-            skillBar.style.width = '0';
-            setTimeout(() => {
-                skillBar.style.width = width;
-            }, 100);
+            skillBar.style.width = `${skillBar.dataset.progress}%`;
             skillObserver.unobserve(skillBar);
         }
     });
