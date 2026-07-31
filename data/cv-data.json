@@ -258,6 +258,11 @@
   ],
   "conferences": [
     {
+      "name": "ICWSM 2026 (NLPercep Workshop, oral presentation)",
+      "detail": "Los Angeles, California, USA",
+      "date": "May 2026"
+    },
+    {
       "name": "Deep Learning Indaba",
       "detail": "Kigali Convention & Exhibition Village, Rwanda",
       "date": "Aug 2025"
