@@ -1727,6 +1727,13 @@ section::before {
     line-height: 1.4;
 }
 
+.publication-note {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
 .publication-status {
     display: inline-block;
     padding: 0.25rem 0.75rem;
